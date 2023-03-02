@@ -1,4 +1,4 @@
-package Entity;
+package com.GDSC.ConsumerOptimization.Entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,35 +14,41 @@ public class WashingMachinePost extends Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    @Column(name = "piece_number")
-    int piece_number;
+    @Column(name = "pieceNumberPerWashing")
+    int pieceNumberPerWashing;
     @Column(name = "degree")
     int degree;
-    @Column(name = "weekly_frequency")
-    int weekly_frequency;
-    @Column(name = "detergent_type")
-    String detergent_type;
-    @Column(name = "avg_detergent_ml")
-    String avg_detergent_ml;
-    @Column(name = "detergent_brand")
-    String detergent_brand;
-    @Column(name = "fabric_softener_usage")
-    String fabric_softener_usage;
-    @Column(name = "fabric_softener_ml")
-    String fabric_softener_ml;
-    @Column(name = "washing_machine_brand")
-    String washing_machine_brand;
+    @Column(name = "weeklyFrequency")
+    int weeklyFrequency;
+    @Column(name = "detergentType")
+    String detergentType;
+    @Column(name = "avgDetergentMl")
+    String avgDetergentMl;
+    @Column(name = "detergentBrand")
+    String detergentBrand;
+    @Column(name = "fabricSoftenerUsage")
+    String fabricSoftenerUsage;
+    @Column(name = "fabricSoftenerMl")
+    String fabricSoftenerMl;
+    @Column(name = "washingMachineBrand")
+    String washingMachineBrand;
 
+    @Override
     public Long getId() {
         return id;
     }
 
-    public int getPiece_number() {
-        return piece_number;
+    @Override
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setPiece_number(int piece_number) {
-        this.piece_number = piece_number;
+    public int getPieceNumberPerWashing() {
+        return pieceNumberPerWashing;
+    }
+
+    public void setPieceNumberPerWashing(int pieceNumberPerWashing) {
+        this.pieceNumberPerWashing = pieceNumberPerWashing;
     }
 
     public int getDegree() {
@@ -53,75 +59,81 @@ public class WashingMachinePost extends Post {
         this.degree = degree;
     }
 
-    public int getWeekly_frequency() {
-        return weekly_frequency;
+    public int getWeeklyFrequency() {
+        return weeklyFrequency;
     }
 
-    public void setWeekly_frequency(int weekly_frequency) {
-        this.weekly_frequency = weekly_frequency;
+    public void setWeeklyFrequency(int weeklyFrequency) {
+        this.weeklyFrequency = weeklyFrequency;
     }
 
-    public String getDetergent_type() {
-        return detergent_type;
+    public String getDetergentType() {
+        return detergentType;
     }
 
-    public void setDetergent_type(String detergent_type) {
-        this.detergent_type = detergent_type;
+    public void setDetergentType(String detergentType) {
+        this.detergentType = detergentType;
     }
 
-    public String getAvg_detergent_ml() {
-        return avg_detergent_ml;
+    public String getAvgDetergentMl() {
+        return avgDetergentMl;
     }
 
-    public void setAvg_detergent_ml(String avg_detergent_ml) {
-        this.avg_detergent_ml = avg_detergent_ml;
+    public void setAvgDetergentMl(String avgDetergentMl) {
+        this.avgDetergentMl = avgDetergentMl;
     }
 
-    public String getDetergent_brand() {
-        return detergent_brand;
+    public String getDetergentBrand() {
+        return detergentBrand;
     }
 
-    public void setDetergent_brand(String detergent_brand) {
-        this.detergent_brand = detergent_brand;
+    public void setDetergentBrand(String detergentBrand) {
+        this.detergentBrand = detergentBrand;
     }
 
-    public String getFabric_softener_usage() {
-        return fabric_softener_usage;
+    public String getFabricSoftenerUsage() {
+        return fabricSoftenerUsage;
     }
 
-    public void setFabric_softener_usage(String fabric_softener_usage) {
-        this.fabric_softener_usage = fabric_softener_usage;
+    public void setFabricSoftenerUsage(String fabricSoftenerUsage) {
+        this.fabricSoftenerUsage = fabricSoftenerUsage;
     }
 
-    public String getFabric_softener_ml() {
-        return fabric_softener_ml;
+    public String getFabricSoftenerMl() {
+        return fabricSoftenerMl;
     }
 
-    public void setFabric_softener_ml(String fabric_softener_ml) {
-        this.fabric_softener_ml = fabric_softener_ml;
+    public void setFabricSoftenerMl(String fabricSoftenerMl) {
+        this.fabricSoftenerMl = fabricSoftenerMl;
     }
 
-    public String getWashing_machine_brand() {
-        return washing_machine_brand;
+    public String getWashingMachineBrand() {
+        return washingMachineBrand;
     }
 
-    public void setWashing_machine_brand(String washing_machine_brand) {
-        this.washing_machine_brand = washing_machine_brand;
+    public void setWashingMachineBrand(String washingMachineBrand) {
+        this.washingMachineBrand = washingMachineBrand;
     }
 
     @Override
     public String toString() {
         return "WashingMachinePost{" +
                 "id=" + id +
-                ", piece_number=" + piece_number +
+                ", pieceNumberPerWashing=" + pieceNumberPerWashing +
                 ", degree=" + degree +
-                ", weekly_frequency=" + weekly_frequency +
-                ", detergent_type='" + detergent_type + '\'' +
-                ", avg_detergent_ml='" + avg_detergent_ml + '\'' +
-                ", detergent_brand='" + detergent_brand + '\'' +
-                ", fabric_softener_usage='" + fabric_softener_usage + '\'' +
-                ", fabric_softener_ml='" + fabric_softener_ml + '\'' +
-                ", washing_machine_brand='" + washing_machine_brand + '\'' +
+                ", weeklyFrequency=" + weeklyFrequency +
+                ", detergentType='" + detergentType + '\'' +
+                ", avgDetergentMl='" + avgDetergentMl + '\'' +
+                ", detergentBrand='" + detergentBrand + '\'' +
+                ", fabricSoftenerUsage='" + fabricSoftenerUsage + '\'' +
+                ", fabricSoftenerMl='" + fabricSoftenerMl + '\'' +
+                ", washingMachineBrand='" + washingMachineBrand + '\'' +
+                ", id=" + id +
+                ", SUPER"+
+                ", description='" + description + '\'' +
+                ", explanation='" + explanation + '\'' +
+                ", userToken='" + userToken + '\'' +
+                ", category='" + category + '\'' +
                 '}';
     }
 }

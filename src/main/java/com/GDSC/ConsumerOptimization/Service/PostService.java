@@ -1,16 +1,19 @@
 package com.GDSC.ConsumerOptimization.Service;
 
-import com.GDSC.ConsumerOptimization.Entity.Post;
-import com.GDSC.ConsumerOptimization.Entity.PostCategory;
-import org.springframework.stereotype.Service;
+import com.GDSC.ConsumerOptimization.Entity.Post.Post;
+import com.GDSC.ConsumerOptimization.Entity.Post.PostCategory;
+import com.GDSC.ConsumerOptimization.Entity.User.UserInfo;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 
 public interface PostService {
-    List<Post> getPostByUserToken(String user_id);
     void savePost(Post post);
     void deletePost(Long postId);
     Post create_post(PostCategory category);
+    Optional<List<Post>> getPostByUserInfo(UserInfo userInfo);
+    void injectCategoricalPostContent(Post post) throws IOException, InterruptedException;
 
 }

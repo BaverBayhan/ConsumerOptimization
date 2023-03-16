@@ -1,4 +1,4 @@
-package com.GDSC.ConsumerOptimization.Entity;
+package com.GDSC.ConsumerOptimization.Entity.Post;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -129,11 +129,11 @@ public class WashingMachinePost extends Post {
                 ", fabricSoftenerMl='" + fabricSoftenerMl + '\'' +
                 ", washingMachineBrand='" + washingMachineBrand + '\'' +
                 ", id=" + id +
-                ", SUPER"+
-                ", description='" + description + '\'' +
                 ", explanation='" + explanation + '\'' +
-                ", userToken='" + userToken + '\'' +
                 ", category='" + category + '\'' +
+                ", time=" + time +
+                ", likeCount=" + likeCount +
+                ", userInfo=" + userInfo +
                 '}';
     }
 }

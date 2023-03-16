@@ -1,6 +1,8 @@
-package com.GDSC.ConsumerOptimization.Entity;
+package com.GDSC.ConsumerOptimization.Entity.Post;
 
 
+import com.GDSC.ConsumerOptimization.Entity.User.User;
+import com.GDSC.ConsumerOptimization.Entity.User.UserInfo;
 import com.GDSC.ConsumerOptimization.Utils.CustomPostSerializer;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.*;
@@ -15,18 +17,18 @@ public abstract class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    @Column(name="description")
-    String description;
     @Column(name="explanation")
     String explanation;
-    @Column(name="userToken")
-    String userToken;
     @Column(name="category")
     String category;
     @Column(name = "timeCreated")
     LocalDateTime time;
     @Column(name="likeCount")
-    int like;
+    int likeCount;
+
+    @ManyToOne(cascade = CascadeType.MERGE  ,fetch = FetchType.EAGER)
+    @JoinColumn(name = "userInfo",referencedColumnName = "id")
+    UserInfo userInfo;
 
     public Post() {
     }
@@ -39,13 +41,7 @@ public abstract class Post {
         this.id = id;
     }
 
-    public String getDescription() {
-        return description;
-    }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
     public String getExplanation() {
         return explanation;
@@ -55,13 +51,7 @@ public abstract class Post {
         this.explanation = explanation;
     }
 
-    public String getUserToken() {
-        return userToken;
-    }
 
-    public void setUserToken(String userToken) {
-        this.userToken = userToken;
-    }
 
     public String getCategory() {
         return category;
@@ -79,11 +69,19 @@ public abstract class Post {
         this.time = time;
     }
 
-    public int getLike() {
-        return like;
+    public int getLikeCount() {
+        return likeCount;
     }
 
-    public void setLike(int like) {
-        this.like = like;
+    public void setLikeCount(int likeCount) {
+        this.likeCount = likeCount;
+    }
+
+    public UserInfo getUserInfo() {
+        return userInfo;
+    }
+
+    public void setUserInfo(UserInfo userInfo) {
+        this.userInfo = userInfo;
     }
 }

@@ -1,4 +1,4 @@
-package com.GDSC.ConsumerOptimization.Entity;
+package com.GDSC.ConsumerOptimization.Entity.Post;
 
 public enum PostCategory {
     TV("Television"),
@@ -9,7 +9,8 @@ public enum PostCategory {
     OVEN("Oven"),
     MICROWAVE("Microwave"),
     TOASTER("Toaster"),
-    COFFEE_MAKER("Coffee Maker");
+    COFFEE_MAKER("Coffee Maker"),
+    GENERIC("Generic");
 
     private final String name;
     PostCategory(String name) {

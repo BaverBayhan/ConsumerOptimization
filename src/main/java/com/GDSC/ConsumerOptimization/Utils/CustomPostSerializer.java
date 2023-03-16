@@ -1,9 +1,9 @@
 package com.GDSC.ConsumerOptimization.Utils;
 
-import com.GDSC.ConsumerOptimization.Entity.DishWasherPost;
-import com.GDSC.ConsumerOptimization.Entity.Post;
-import com.GDSC.ConsumerOptimization.Entity.PostCategory;
-import com.GDSC.ConsumerOptimization.Entity.WashingMachinePost;
+import com.GDSC.ConsumerOptimization.Entity.Post.DishWasherPost;
+import com.GDSC.ConsumerOptimization.Entity.Post.Post;
+import com.GDSC.ConsumerOptimization.Entity.Post.PostCategory;
+import com.GDSC.ConsumerOptimization.Entity.Post.WashingMachinePost;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
@@ -27,10 +27,9 @@ public class CustomPostSerializer extends StdSerializer<Post> {
     public void serialize(Post post, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
         jsonGenerator.writeStartObject();
         jsonGenerator.writeNumberField("id", post.getId());
-        jsonGenerator.writeStringField("description", post.getDescription());
         jsonGenerator.writeStringField("explanation", post.getExplanation());
-        jsonGenerator.writeStringField("userToken", post.getUserToken());
         jsonGenerator.writeStringField("category", post.getCategory());
+        jsonGenerator.writeNumberField("likeCount",post.getLikeCount());
         LocalDateTime dateTime = post.getTime();
         String dateTimeString = dateTime.format(formatter);
         jsonGenerator.writeStringField("createdAt", dateTimeString);

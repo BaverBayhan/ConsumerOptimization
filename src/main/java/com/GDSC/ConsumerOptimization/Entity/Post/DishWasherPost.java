@@ -1,4 +1,4 @@
-package com.GDSC.ConsumerOptimization.Entity;
+package com.GDSC.ConsumerOptimization.Entity.Post;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -64,10 +64,11 @@ public class DishWasherPost extends Post{
                 ", dishSoapBrand='" + dishSoapBrand + '\'' +
                 ", timesPerWeek=" + timesPerWeek +
                 ", id=" + id +
-                ", description='" + description + '\'' +
                 ", explanation='" + explanation + '\'' +
-                ", userToken='" + userToken + '\'' +
                 ", category='" + category + '\'' +
+                ", time=" + time +
+                ", likeCount=" + likeCount +
+                ", userInfo=" + userInfo +
                 '}';
     }
 }

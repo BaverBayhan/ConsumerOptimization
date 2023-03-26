@@ -39,28 +39,5 @@ public class PostDto {
         this.timeCreated = timeCreated;
     }
 
-    public static PostCategory checkCategory(String category)
-    {
-        if(PostCategory.WASHING_MACHINE.getName().equals((category)))
-        {
-            return PostCategory.WASHING_MACHINE;
-        }
-        else if(PostCategory.DISHWASHER.getName().equals((category)))
-        {
-            return PostCategory.DISHWASHER;
-        }
-        else if(PostCategory.DRYER.getName().equals((category)))
-        {
-            return PostCategory.DRYER;
-        }
-        else if(PostCategory.GENERIC.getName().equals((category)))
-        {
-            return PostCategory.GENERIC;
-        }
-        else
-        {
-            return null;
-        }
-    }
 
 }

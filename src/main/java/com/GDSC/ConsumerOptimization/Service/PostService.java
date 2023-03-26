@@ -14,6 +14,6 @@ public interface PostService {
     void deletePost(Long postId);
     Post create_post(PostCategory category);
     Optional<List<Post>> getPostByUserInfo(UserInfo userInfo);
-    void injectCategoricalPostContent(Post post) throws IOException, InterruptedException;
+    void injectCategoricalPostContent(Post post , List<String> postList) throws IOException, InterruptedException;
 
 }

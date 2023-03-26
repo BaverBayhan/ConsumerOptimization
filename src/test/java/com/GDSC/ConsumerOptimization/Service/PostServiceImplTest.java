@@ -1,10 +1,8 @@
 package com.GDSC.ConsumerOptimization.Service;
 
 import com.GDSC.ConsumerOptimization.Dto.PostDto;
-import com.GDSC.ConsumerOptimization.Entity.Post.DishWasherPost;
 import com.GDSC.ConsumerOptimization.Entity.Post.Post;
 import com.GDSC.ConsumerOptimization.Entity.Post.PostCategory;
-import com.GDSC.ConsumerOptimization.Entity.Post.WashingMachinePost;
 import com.GDSC.ConsumerOptimization.Entity.User.UserInfo;
 import com.GDSC.ConsumerOptimization.Repository.UserinfoRepo;
 import org.junit.jupiter.api.Test;
@@ -90,7 +88,7 @@ class PostServiceImplTest {
     {
         String username = "baver1234";
         PostDto postDto = new PostDto("Washing Machine","explanation",LocalDateTime.now());
-        Post post = postService.create_post(PostDto.checkCategory(postDto.getCategory()));
+        Post post = postService.create_post(PostCategory.checkPostCategory(postDto.getCategory()));
         post.setCategory(postDto.getCategory());
         post.setExplanation(postDto.getExplanation());
         post.setTime(postDto.getTimeCreated());

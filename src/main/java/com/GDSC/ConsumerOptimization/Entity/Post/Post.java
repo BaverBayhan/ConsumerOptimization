@@ -41,8 +41,6 @@ public abstract class Post {
         this.id = id;
     }
 
-
-
     public String getExplanation() {
         return explanation;
     }
@@ -50,8 +48,6 @@ public abstract class Post {
     public void setExplanation(String explanation) {
         this.explanation = explanation;
     }
-
-
 
     public String getCategory() {
         return category;
@@ -83,5 +79,17 @@ public abstract class Post {
 
     public void setUserInfo(UserInfo userInfo) {
         this.userInfo = userInfo;
+    }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "id=" + id +
+                ", explanation='" + explanation + '\'' +
+                ", category='" + category + '\'' +
+                ", time=" + time +
+                ", likeCount=" + likeCount +
+                ", userInfo=" + userInfo +
+                '}';
     }
 }

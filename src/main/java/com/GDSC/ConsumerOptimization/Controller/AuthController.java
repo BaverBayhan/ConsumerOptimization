@@ -8,6 +8,7 @@ import com.GDSC.ConsumerOptimization.Entity.User.User;
 import com.GDSC.ConsumerOptimization.Repository.UserRepo;
 import com.GDSC.ConsumerOptimization.Security.JwtGenerator;
 import org.apache.http.protocol.HTTP;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.endpoint.SecurityContext;
 import org.springframework.http.HttpStatus;
@@ -33,9 +34,8 @@ public class AuthController {
     @Autowired
     private JwtGenerator jwtGenerator;
 
-
     @PostMapping("/register")
-    public ResponseEntity<String> register(@RequestBody RegisterDto registerDto)
+    public ResponseEntity<String> register(@RequestBody @NotNull RegisterDto registerDto)
     {
         if(userRepo.existsByUsername(registerDto.getUsername()))
         {
@@ -47,14 +47,12 @@ public class AuthController {
             user.setUsername(registerDto.getUsername());
             user.setPassword(passwordEncoder.encode(registerDto.getPassword()));
             user.setRoles(Collections.singletonList(Roles.USER));
-
             userRepo.save(user);
             return new ResponseEntity<>("User Registered Successfully !",HttpStatus.CREATED);
         }
     }
-
     @PostMapping("/login")
-    public ResponseEntity<AuthResponseDto> login(@RequestBody RegisterDto loginDto)
+    public ResponseEntity<AuthResponseDto> login(@RequestBody @NotNull RegisterDto loginDto)
     {
         Authentication authentication = authenticationManager
                 .authenticate(new UsernamePasswordAuthenticationToken(loginDto.getUsername(),loginDto.getPassword()));

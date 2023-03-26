@@ -24,9 +24,20 @@ def get_data_with_username(name,description,username):
 
     return row_value
 
-name="Generic (Responses)"
-description="Form Responses 1"
+
+
+sheetDict = {
+    "DISHWASHER":["Dishwasher (Yanıtlar)","Form Yanıtları 1"],
+    "WASHINGMACHINE":["Washing Machine (Responses)","Form Responses 1"],
+    "KITCHEN":["Kitchen (Yanıtlar)","Form Yanıtları 1"],
+    "ENERGYCONSUMPTION":["Energy Consumption (Yanıtlar)","Form Yanıtları 1"],
+    "PERSONALHYGIENE":["Personal Hygiene (Yanıtlar)","Form Yanıtları 1"],
+    "RUBBISH":["Rubbish (Yanıtlar)","Form Yanıtları 1"],
+    "VACUUMCLEANER":["Vacuum Cleaner (Yanıtlar)","Form Yanıtları 1"],
+    "GENERIC":["Generic (Responses)","Form Responses 1"]
+}
 
 
 
-print(get_data_with_username(name,description,"baver1234"))
+
+

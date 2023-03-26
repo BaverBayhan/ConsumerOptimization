@@ -1,6 +1,7 @@
-package com.GDSC.ConsumerOptimization.Entity.Post;
+package com.GDSC.ConsumerOptimization.Entity.Post.Subcategories;
 
 
+import com.GDSC.ConsumerOptimization.Entity.Post.Post;
 import jakarta.persistence.*;
 
 @Entity

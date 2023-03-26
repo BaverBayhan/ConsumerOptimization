@@ -10,10 +10,10 @@ class HttpFormContentClientTest {
 
     @Test
     void getSheetData() throws IOException, InterruptedException {
-        String response = HttpFormContentUtils.getFromSheetApi(URLPaths.GENERIC.getPath(),"baver1234");
-        System.err.println(HttpFormContentUtils.stringResponseToList(response).get(1));
+        String response = HttpFormContentUtils.getUserDataFromSheetApi(URLPaths.WASHINGMACHINE.getPath(),"baver1234");
+        HttpFormContentUtils.stringResponseToList(response);
+        System.err.println(response);
     }
-
     @Test
     void get_from_sheet_api() {
     }

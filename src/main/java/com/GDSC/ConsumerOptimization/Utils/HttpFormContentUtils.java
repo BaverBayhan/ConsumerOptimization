@@ -10,10 +10,20 @@ import java.net.http.HttpResponse;
 import java.util.List;
 
 public class HttpFormContentUtils {
-    public static String getFromSheetApi(String path,String username) throws IOException, InterruptedException {
+    public static String getUserDataFromSheetApi(String path,String username) throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(String.format("http://localhost:8000/%s/%s",path,username)))
+                .GET()
+                .build();
+        HttpResponse<String> response = client.send(request,
+                HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+    public static String getAllDataFromSheetApi(String path) throws IOException, InterruptedException {
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(String.format("http://localhost:8000/%s",path)))
                 .GET()
                 .build();
         HttpResponse<String> response = client.send(request,
@@ -24,7 +34,6 @@ public class HttpFormContentUtils {
     public static List<String> stringResponseToList(String response)
     {
         Gson gson = new Gson();
-        List<String> responseList = gson.fromJson(response, List.class);
-        return responseList;
+        return gson.fromJson(response, List.class);
     }
 }

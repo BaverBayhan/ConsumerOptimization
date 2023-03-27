@@ -15,5 +15,4 @@ public class UserInfoDto {
     private int annualSalary;
     private String civilStatus;
 
-
 }

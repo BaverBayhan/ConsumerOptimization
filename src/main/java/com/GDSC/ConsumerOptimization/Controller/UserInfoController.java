@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping(path = "api/userinfo/")
 public class UserInfoController {
@@ -37,6 +39,24 @@ public class UserInfoController {
         userinfoRepo.save(userInfo);
         return new ResponseEntity<>("User info created successfully !", HttpStatus.CREATED);
 
+    }
+
+    @GetMapping(path = "retrieve")
+    public ResponseEntity<UserInfoDto> getUserInfo(@RequestHeader("Authorization") @NotNull String token)
+    {
+        String username = generator.getUsernameFromJWT(token.substring(7));
+        Optional<UserInfo> userInfo = userinfoRepo.findByUsername(username);
+        UserInfoDto userInfoDto = new UserInfoDto();
+        if(userInfo.isPresent())
+        {
+            userInfoDto.setCity(userInfo.get().getCity());
+            userInfoDto.setJob(userInfo.get().getJob());
+            userInfoDto.setAnnualSalary(userInfo.get().getAnnualSalary());
+            userInfoDto.setMemberNumberInHome(userInfo.get().getMemberNumberInHome());
+            userInfoDto.setCivilStatus(userInfo.get().getCivilStatus());
+        }
+
+        return new ResponseEntity<>(userInfoDto,HttpStatus.OK);
     }
 
 

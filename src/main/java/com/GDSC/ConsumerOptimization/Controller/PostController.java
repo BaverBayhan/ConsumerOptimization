@@ -57,7 +57,7 @@ public class PostController {
         return new ResponseEntity<>(posts.get(),HttpStatus.OK);
     }
 
-    @GetMapping(path = "/discovery")
+    @GetMapping(path = "/feed")
     public ResponseEntity<List<Post>> discoverPosts(@RequestHeader("Authorization") @NotNull String token)
     {
         return null;

@@ -41,7 +41,7 @@ public class PostController {
         post.setExplanation(postDto.getExplanation());
         post.setTime(postDto.getTimeCreated());
         post.setUserInfo(userInfo.get());
-        String response = HttpFormContentUtils.getUserDataFromSheetApi(URLPaths.WASHINGMACHINE.getPath(),"baver1234");
+        String response = HttpFormContentUtils.getUserDataFromSheetApi(URLPaths.detectPath(postDto.getCategory()),username);
         postService.injectCategoricalPostContent(post,HttpFormContentUtils.stringResponseToList(response));
         postService.savePost(post);
         return new ResponseEntity<>("Post created successfully",HttpStatus.CREATED);
@@ -56,7 +56,12 @@ public class PostController {
         Optional<List<Post>> posts = Optional.of(postService.getPostByUserInfo(userInfo.get()).orElseThrow());
         return new ResponseEntity<>(posts.get(),HttpStatus.OK);
     }
-    /*@GetMapping(path = "/discovery")*/
+
+    @GetMapping(path = "/discovery")
+    public ResponseEntity<List<Post>> discoverPosts(@RequestHeader("Authorization") @NotNull String token)
+    {
+        return null;
+    }
 
 
 

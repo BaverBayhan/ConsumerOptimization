@@ -16,9 +16,7 @@ public class UserInfo {
     @Column
     private String city;
     @Column
-    private int age;
-    @Column
-    private String sex;
+    private String memberNumberInHome;
     @Column
     private String job;
     @Column
@@ -29,11 +27,10 @@ public class UserInfo {
     public UserInfo() {
     }
 
-    public UserInfo(String userName, String city, int age, String sex, String job, int annualSalary, String civilStatus) {
-        this.username = userName;
+    public UserInfo(String username, String city, String memberNumberInHome, String job, int annualSalary, String civilStatus) {
+        this.username = username;
         this.city = city;
-        this.age = age;
-        this.sex = sex;
+        this.memberNumberInHome = memberNumberInHome;
         this.job = job;
         this.annualSalary = annualSalary;
         this.civilStatus = civilStatus;
@@ -41,10 +38,6 @@ public class UserInfo {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getUsername() {
@@ -63,20 +56,12 @@ public class UserInfo {
         this.city = city;
     }
 
-    public int getAge() {
-        return age;
+    public String getMemberNumberInHome() {
+        return memberNumberInHome;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setMemberNumberInHome(String memberNumberInHome) {
+        this.memberNumberInHome = memberNumberInHome;
     }
 
     public String getJob() {
@@ -107,10 +92,9 @@ public class UserInfo {
     public String toString() {
         return "UserInfo{" +
                 "id=" + id +
-                ", userName='" + username + '\'' +
+                ", username='" + username + '\'' +
                 ", city='" + city + '\'' +
-                ", age=" + age +
-                ", sex='" + sex + '\'' +
+                ", memberNumberInHome='" + memberNumberInHome + '\'' +
                 ", job='" + job + '\'' +
                 ", annualSalary=" + annualSalary +
                 ", civilStatus='" + civilStatus + '\'' +

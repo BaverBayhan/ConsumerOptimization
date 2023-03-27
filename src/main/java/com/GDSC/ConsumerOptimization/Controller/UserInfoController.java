@@ -29,11 +29,10 @@ public class UserInfoController {
         String username = generator.getUsernameFromJWT(token.substring(7));
         UserInfo userInfo = new UserInfo();
         userInfo.setUsername(username);
-        userInfo.setSex(userInfoDto.getSex());
+        userInfo.setMemberNumberInHome(userInfoDto.getMemberNumberInHome());
         userInfo.setCity(userInfoDto.getCity());
         userInfo.setJob(userInfoDto.getJob());
         userInfo.setAnnualSalary(userInfoDto.getAnnualSalary());
-        userInfo.setAge(userInfoDto.getAge());
         userInfo.setCivilStatus(userInfoDto.getCivilStatus());
         userinfoRepo.save(userInfo);
         return new ResponseEntity<>("User info created successfully !", HttpStatus.CREATED);

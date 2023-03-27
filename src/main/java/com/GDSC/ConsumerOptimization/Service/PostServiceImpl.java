@@ -36,7 +36,7 @@ public class PostServiceImpl implements PostService{
     }
 
     @Override
-    public Post create_post(PostCategory category) {
+    public Post create_post(@NotNull PostCategory category) {
         Post post = null;
         if(category.equals(PostCategory.DISHWASHER))
         {
@@ -116,7 +116,6 @@ public class PostServiceImpl implements PostService{
 
         return path;
     }
-
     @Override
     public void injectCategoricalPostContent(@NotNull Post post, @NotNull List<String> postList) throws IOException, InterruptedException {
 
@@ -219,6 +218,11 @@ public class PostServiceImpl implements PostService{
             rubbishPost.setRecyclingBagsAmountPerWeek(postList.get((RubbishIndexes.RECYCLINGBAGAMOUNTSPERWEEK.getName())));
         }
 
+    }
+
+    @Override
+    public List<Post> feedGenerator() {
+        return null;
     }
 
 

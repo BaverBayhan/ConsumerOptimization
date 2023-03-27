@@ -10,8 +10,7 @@ import lombok.*;
 @ToString
 public class UserInfoDto {
     private String city;
-    private int age;
-    private String sex;
+    private String memberNumberInHome;
     private String job;
     private int annualSalary;
     private String civilStatus;

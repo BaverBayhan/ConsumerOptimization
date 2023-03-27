@@ -16,4 +16,6 @@ public interface PostService {
     Optional<List<Post>> getPostByUserInfo(UserInfo userInfo);
     void injectCategoricalPostContent(Post post , List<String> postList) throws IOException, InterruptedException;
 
+    List<Post> feedGenerator();
+
 }

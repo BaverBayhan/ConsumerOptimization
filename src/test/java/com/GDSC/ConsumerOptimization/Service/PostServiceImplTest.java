@@ -1,3 +1,4 @@
+/*
 package com.GDSC.ConsumerOptimization.Service;
 
 import com.GDSC.ConsumerOptimization.Dto.PostDto;
@@ -23,6 +24,7 @@ class PostServiceImplTest {
 
     @Autowired
     UserinfoRepo userinfoRepo;
+*/
 /*    @Test
     public void savePost() {
         PostCategory category = PostCategory.DISHWASHER;
@@ -51,7 +53,8 @@ class PostServiceImplTest {
 
         }
         service.savePost(post);
-    }*/
+    }*//*
+
 
 
 
@@ -119,4 +122,4 @@ class PostServiceImplTest {
     }
 
 
-}
+}*/

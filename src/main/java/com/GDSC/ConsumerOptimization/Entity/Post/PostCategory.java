@@ -1,7 +1,5 @@
 package com.GDSC.ConsumerOptimization.Entity.Post;
 
-import com.GDSC.ConsumerOptimization.Utils.URLPaths;
-
 public enum PostCategory {
 
     DISHWASHER("Dishwasher"),
@@ -12,8 +10,6 @@ public enum PostCategory {
     RUBBISH("Rubbish"),
     VACUUM_CLEANER("Vacuum Cleaner"),
     WASHING_MACHINE("Washing Machine");
-
-
 
     private final String name;
     PostCategory(String name) {

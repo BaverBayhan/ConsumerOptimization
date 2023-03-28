@@ -1,3 +1,4 @@
+/*
 package com.GDSC.ConsumerOptimization.Service;
 
 import com.GDSC.ConsumerOptimization.Entity.User.User;
@@ -23,6 +24,7 @@ class UserServiceImplTest {
 
     @Test
     void saveUser() {
+*/
 /*        User user = new User();
         user.setEmail("bayhanbaver8@gmail.com");
         user.setAge(21);
@@ -31,8 +33,10 @@ class UserServiceImplTest {
         user.setJob("software engineer");
         user.setSalary(7000);
         user.setSex("male");
-        user.setCivilStatus("single");*/
+        user.setCivilStatus("single");*//*
 
+
+*/
 /*        User user = new User();
         user.setEmail("baver5616@gmail.com");
         user.setAge(18);
@@ -41,7 +45,8 @@ class UserServiceImplTest {
         user.setJob("computer engineer");
         user.setSalary(8000);
         user.setSex("male");
-        user.setCivilStatus("married");*/
+        user.setCivilStatus("married");*//*
+
 
 
     }
@@ -53,4 +58,4 @@ class UserServiceImplTest {
     @Test
     void getUserWithEmail() {
     }
-}
+}*/

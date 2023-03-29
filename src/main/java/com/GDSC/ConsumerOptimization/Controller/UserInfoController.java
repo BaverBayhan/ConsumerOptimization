@@ -1,9 +1,7 @@
 package com.GDSC.ConsumerOptimization.Controller;
 
 import com.GDSC.ConsumerOptimization.Dto.UserInfoDto;
-import com.GDSC.ConsumerOptimization.Entity.User.User;
 import com.GDSC.ConsumerOptimization.Entity.User.UserInfo;
-import com.GDSC.ConsumerOptimization.Repository.PostRepo;
 import com.GDSC.ConsumerOptimization.Repository.UserinfoRepo;
 import com.GDSC.ConsumerOptimization.Security.JwtGenerator;
 import org.jetbrains.annotations.NotNull;

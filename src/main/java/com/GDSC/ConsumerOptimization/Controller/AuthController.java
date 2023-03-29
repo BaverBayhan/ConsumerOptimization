@@ -1,16 +1,13 @@
 package com.GDSC.ConsumerOptimization.Controller;
 
-import ch.qos.logback.core.joran.spi.ElementSelector;
 import com.GDSC.ConsumerOptimization.Dto.AuthResponseDto;
 import com.GDSC.ConsumerOptimization.Dto.RegisterDto;
 import com.GDSC.ConsumerOptimization.Entity.User.Roles;
 import com.GDSC.ConsumerOptimization.Entity.User.User;
 import com.GDSC.ConsumerOptimization.Repository.UserRepo;
 import com.GDSC.ConsumerOptimization.Security.JwtGenerator;
-import org.apache.http.protocol.HTTP;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.actuate.endpoint.SecurityContext;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -66,20 +63,4 @@ public class AuthController {
         String token = jwtGenerator.generateToken(authentication);
         return new ResponseEntity<>(new AuthResponseDto(token),HttpStatus.OK);
     }
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-

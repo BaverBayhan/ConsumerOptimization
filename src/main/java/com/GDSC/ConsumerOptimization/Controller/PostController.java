@@ -58,9 +58,11 @@ public class PostController {
     }
 
     @GetMapping(path = "/feed")
-    public ResponseEntity<List<Post>> discoverPosts(@RequestHeader("Authorization") @NotNull String token)
+    public ResponseEntity<List<Post>> discoverPosts(@RequestHeader("Authorization") @NotNull String token,
+                                                    @RequestParam(name = "page") int page)
     {
-        return null;
+        List<Post> posts = postService.feedGenerator(page);
+        return new ResponseEntity<>(posts,HttpStatus.OK);
     }
 
 

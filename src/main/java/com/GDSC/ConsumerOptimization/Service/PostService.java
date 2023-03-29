@@ -15,7 +15,6 @@ public interface PostService {
     Post create_post(PostCategory category);
     Optional<List<Post>> getPostByUserInfo(UserInfo userInfo);
     void injectCategoricalPostContent(Post post , List<String> postList) throws IOException, InterruptedException;
-
-    List<Post> feedGenerator();
+    List<Post> feedGenerator(int pageNo);
 
 }

@@ -14,5 +14,6 @@ public class UserInfoDto {
     private String job;
     private int annualSalary;
     private String civilStatus;
+    private String username;
 
 }

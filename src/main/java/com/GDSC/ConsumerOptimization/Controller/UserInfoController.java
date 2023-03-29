@@ -52,6 +52,7 @@ public class UserInfoController {
             userInfoDto.setAnnualSalary(userInfo.get().getAnnualSalary());
             userInfoDto.setMemberNumberInHome(userInfo.get().getMemberNumberInHome());
             userInfoDto.setCivilStatus(userInfo.get().getCivilStatus());
+            userInfoDto.setUsername(username);
         }
 
         return new ResponseEntity<>(userInfoDto,HttpStatus.OK);

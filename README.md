@@ -57,6 +57,9 @@ Also you can run Futter Application with
   
   
   ***Also There are attributions we want to mention. We have taken some icons from various websites. Thanks for sharing these wonderful icons for free.***
-  <a href="https://www.flaticon.com/free-icons/kitchen" title="kitchen icons">Kitchen icons created by xnimrodx - Flaticon</a>
+  
+  
+  **<a href="https://www.flaticon.com/free-icons/kitchen" title="kitchen icons">Kitchen icons created by xnimrodx - Flaticon</a>**
+  **<a href="https://www.flaticon.com/free-icons/washing-machine" title="washing machine icons">Washing machine icons created by Freepik - Flaticon</a>**
   
   

@@ -39,5 +39,5 @@ Your backend app up and running now. For now we have 9 endpoints. All endpoints 
 
 Also you can run Futter Application with 
 
-<code> flutter run <code>
+<code> flutter run </code>
   

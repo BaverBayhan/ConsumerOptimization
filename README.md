@@ -14,6 +14,6 @@ After this steps you can run backend app in terminal by cd to "src" directory an
 
 Then cd to "sheetsapi" and run
 
-# uvicorn main:app --reload
+<code> uvicorn main:app --reload </code>
 
 Your backend app up and running now. For now we have 9 endpoints.

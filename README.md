@@ -31,7 +31,7 @@ Your backend app up and running now. For now we have 9 endpoints. All endpoints 
 
 **localhost:8080/api/userinfo/retrieve**
 
-**localhost:8080/api/post/feed?page=? **
+**localhost:8080/api/post/feed?page=?**
 
 **localhost:8080/api/post/delete?id=?** 
 

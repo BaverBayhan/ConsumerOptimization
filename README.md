@@ -19,7 +19,7 @@ Then cd to "sheetsapi" and run
 Your backend app up and running now. For now we have 9 endpoints. All endpoints are working on localhost:8080 by default.Below you can check API endpoints.
 
 
-<code> localhost:8080/api/auth/register </code>
+<code> localhost:8080/api/auth/register </code> \n
 <code> localhost:8080/api/auth/login </code>
 <code> localhost:8080/api/userinfo/save </code>
 <code> localhost:8080/api/post/save </code>

@@ -225,7 +225,7 @@ public class PostServiceImpl implements PostService{
 
     @Override
     public List<Post> feedGenerator(int pageNo) {
-        int pageSize=3;
+        int pageSize=10;
         Pageable pageable = PageRequest.of(pageNo,pageSize);
         Page<Post> page = postRepo.findAll(pageable);
         return page.getContent();

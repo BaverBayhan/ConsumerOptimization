@@ -14,6 +14,7 @@ public class HttpFormContentUtils {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(String.format("http://localhost:8000/%s/%s",path,username)))
+                .version(HttpClient.Version.HTTP_1_1)
                 .GET()
                 .build();
         HttpResponse<String> response = client.send(request,
@@ -24,6 +25,7 @@ public class HttpFormContentUtils {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(String.format("http://localhost:8000/%s",path)))
+                .version(HttpClient.Version.HTTP_1_1)
                 .GET()
                 .build();
         HttpResponse<String> response = client.send(request,

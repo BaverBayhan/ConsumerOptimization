@@ -19,7 +19,7 @@ Then cd to "sheetsapi" and run
 Your backend app up and running now. For now we have 9 endpoints. All endpoints are working on localhost:8080 by default.Below you can check API endpoints.
 
 
-**localhost:8080/api/auth/register** ***POST***
+**localhost:8080/api/auth/register** ***POST*** 
 
 **localhost:8080/api/auth/login**  ***POST***
 
@@ -37,6 +37,10 @@ Your backend app up and running now. For now we have 9 endpoints. All endpoints 
 
 **localhost:8080/api/post/retrieve?id=?** ***GET***
 
+Also you can run Futter Application with 
+
+<code> flutter run <code>
+  
 
 
 

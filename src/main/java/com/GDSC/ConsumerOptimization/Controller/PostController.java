@@ -87,10 +87,17 @@ public class PostController {
                                             @RequestParam(name = "id") int id)
     {
         String username = generator.getUsernameFromJWT(token.substring(7));
-        FeedDto feedDto = FeedDto.builder().username(username)
-                .post(postService.getPostById((long) id))
-                .id(postService.getPostById((long) id).getId()).build();
-        return new ResponseEntity<>(feedDto,HttpStatus.OK);
+        if(postRepo.existsById((long) id ))
+        {
+            FeedDto feedDto = FeedDto.builder().username(username)
+                    .post(postService.getPostById((long) id))
+                    .id(postService.getPostById((long) id).getId()).build();
+            return new ResponseEntity<>(feedDto,HttpStatus.OK);
+        }
+        else
+        {
+            return new ResponseEntity<>(new FeedDto(), HttpStatus.NOT_FOUND);
+        }
     }
 
     @DeleteMapping(path="/delete")

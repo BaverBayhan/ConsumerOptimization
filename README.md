@@ -10,7 +10,7 @@ installed in your machine. To run python backend you should have FastAPI and Gsp
 
 After this steps you can run backend app in terminal by cd to "src" directory and run 
 
-# mvn spring-boot:run
+<code> uvicorn main:app --reload </code>
 
 Then cd to "sheetsapi" and run
 

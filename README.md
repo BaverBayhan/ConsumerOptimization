@@ -10,10 +10,21 @@ installed in your machine. To run python backend you should have FastAPI and Gsp
 
 After this steps you can run backend app in terminal by cd to "src" directory and run 
 
-<code> uvicorn main:app --reload </code>
+<code> mvn spring-boot:run </code>
 
 Then cd to "sheetsapi" and run
 
 <code> uvicorn main:app --reload </code>
 
-Your backend app up and running now. For now we have 9 endpoints.
+Your backend app up and running now. For now we have 9 endpoints. All endpoints are working on localhost:8080 by default.Below you can check API endpoints.
+
+
+<code> http://localhost:8080/api/auth/register </code>
+<code> http://localhost:8080/api/auth/login </code>
+<code> http://localhost:8080/api/userinfo/save </code>
+<code> http://localhost:8080/api/post/save </code>
+<code> hhttp://localhost:8080/api/post/retrieveAllPosts </code>
+<code> http://localhost:8080/api/userinfo/retrieve </code>
+<code> http://localhost:8080/api/post/feed?page=? </code>
+<code> http://localhost:8080/api/post/delete?id=? </code>
+<code> http://localhost:8080/api/post/retrieve?id=?</code>

@@ -41,6 +41,3 @@ Also you can run Futter Application with
 
 <code> flutter run <code>
   
-
-
-

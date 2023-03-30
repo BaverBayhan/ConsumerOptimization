@@ -12,4 +12,5 @@ import lombok.*;
 public class FeedDto {
     private Post post;
     private String username;
+    private Long id;
 }

@@ -230,6 +230,10 @@ public class PostServiceImpl implements PostService{
         Page<Post> page = postRepo.findAll(pageable);
         return page.getContent();
     }
-
+    @Override
+    public Post getPostById(long id) {
+        Optional<Post> postOpt =  postRepo.findById(id);
+        return postOpt.orElseThrow();
+    }
 
 }

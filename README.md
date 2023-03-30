@@ -1,6 +1,9 @@
 # ConsumerOptimization
 GDSC Solution challenge project
 
+This application is developed by
+* [Baver Bayhan] https://github.com/BaverBayhan
+* [Fevzi Fırat Tatar] https://github.com/fevzifiratt
 
 Hi, this project is a social media application to help consumers with various backgrounds for optimizing their consumption habits. Project consists of
 three main parts as backend application, mobile application and database. In this project we have used Java/Spring Boot - Python/Fast API for backend 

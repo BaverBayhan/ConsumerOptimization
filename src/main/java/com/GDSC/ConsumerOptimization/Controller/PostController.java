@@ -1,4 +1,5 @@
 package com.GDSC.ConsumerOptimization.Controller;
+import com.GDSC.ConsumerOptimization.Dto.FeedDto;
 import com.GDSC.ConsumerOptimization.Dto.PostDto;
 import com.GDSC.ConsumerOptimization.Entity.Post.Post;
 import com.GDSC.ConsumerOptimization.Entity.Post.PostCategory;
@@ -15,6 +16,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -58,11 +60,17 @@ public class PostController {
     }
 
     @GetMapping(path = "/feed")
-    public ResponseEntity<List<Post>> discoverPosts(@RequestHeader("Authorization") @NotNull String token,
-                                                    @RequestParam(name = "page") int page)
+    public ResponseEntity<List<FeedDto>> discoverPosts(@RequestHeader("Authorization") @NotNull String token,
+                                                       @RequestParam(name = "page") int page)
     {
         List<Post> posts = postService.feedGenerator(page);
-        return new ResponseEntity<>(posts,HttpStatus.OK);
+        String username = generator.getUsernameFromJWT(token.substring(7));
+        List<FeedDto> feedDtos = new ArrayList<>();
+        for (Post post : posts) {
+            FeedDto feedDto = FeedDto.builder().post(post).username(post.getUserInfo().getUsername()).build();
+            feedDtos.add(feedDto);
+        }
+        return new ResponseEntity<>(feedDtos,HttpStatus.OK);
     }
 
 

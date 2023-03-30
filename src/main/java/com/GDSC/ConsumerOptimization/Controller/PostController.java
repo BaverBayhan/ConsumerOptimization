@@ -4,6 +4,7 @@ import com.GDSC.ConsumerOptimization.Dto.PostDto;
 import com.GDSC.ConsumerOptimization.Entity.Post.Post;
 import com.GDSC.ConsumerOptimization.Entity.Post.PostCategory;
 import com.GDSC.ConsumerOptimization.Entity.User.UserInfo;
+import com.GDSC.ConsumerOptimization.Exception.PostNotFoundException;
 import com.GDSC.ConsumerOptimization.Repository.PostRepo;
 import com.GDSC.ConsumerOptimization.Repository.UserinfoRepo;
 import com.GDSC.ConsumerOptimization.Security.JwtGenerator;
@@ -55,48 +56,33 @@ public class PostController {
 
 
     @GetMapping(path = "/retrieveAllPosts")
-    public ResponseEntity<List<FeedDto>> getPostOfUser(@RequestHeader("Authorization") @NotNull String token)
+    public ResponseEntity<List<Post>> getPostOfUser(@RequestHeader("Authorization") @NotNull String token)
     {
         String username = generator.getUsernameFromJWT(token.substring(7));
         Optional<UserInfo> userInfo = Optional.of(userinfoRepo.findByUsername(username).orElseThrow());
         Optional<List<Post>> posts = Optional.of(postService.getPostByUserInfo(userInfo.get()).orElseThrow());
-        List<FeedDto> user_posts = new ArrayList<>();
-        for (Post post : posts.orElseThrow()) {
-            FeedDto feedDto = FeedDto.builder().post(post).username(post.getUserInfo().getUsername()).id(post.getId()).build();
-            user_posts.add(feedDto);
-        }
-        return new ResponseEntity<>(user_posts,HttpStatus.OK);
+        return new ResponseEntity<>(posts.orElseThrow(),HttpStatus.OK);
     }
 
     @GetMapping(path = "/feed")
-    public ResponseEntity<List<FeedDto>> discoverPosts(@RequestHeader("Authorization") @NotNull String token,
+    public ResponseEntity<List<Post>> discoverPosts(@RequestHeader("Authorization") @NotNull String token,
                                                        @RequestParam(name = "page") int page)
     {
         List<Post> posts = postService.feedGenerator(page);
-        String username = generator.getUsernameFromJWT(token.substring(7));
-        List<FeedDto> feedDtos = new ArrayList<>();
-        for (Post post : posts) {
-            FeedDto feedDto = FeedDto.builder().post(post).username(post.getUserInfo().getUsername()).build();
-            feedDtos.add(feedDto);
-        }
-        return new ResponseEntity<>(feedDtos,HttpStatus.OK);
+        return new ResponseEntity<>(posts,HttpStatus.OK);
     }
 
     @GetMapping(path ="/retrieve")
-    public ResponseEntity<FeedDto> getPostById(@RequestHeader("Authorization") @NotNull String token,
-                                            @RequestParam(name = "id") int id)
-    {
+    public ResponseEntity<Post> getPostById(@RequestHeader("Authorization") @NotNull String token,
+                                            @RequestParam(name = "id") int id) throws PostNotFoundException {
         String username = generator.getUsernameFromJWT(token.substring(7));
         if(postRepo.existsById((long) id ))
         {
-            FeedDto feedDto = FeedDto.builder().username(username)
-                    .post(postService.getPostById((long) id))
-                    .id(postService.getPostById((long) id).getId()).build();
-            return new ResponseEntity<>(feedDto,HttpStatus.OK);
+            return new ResponseEntity<>(postService.getPostById((long) id),HttpStatus.OK);
         }
         else
         {
-            return new ResponseEntity<>(new FeedDto(), HttpStatus.NOT_FOUND);
+            throw new PostNotFoundException();
         }
     }
 

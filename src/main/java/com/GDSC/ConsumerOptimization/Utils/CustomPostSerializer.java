@@ -29,6 +29,8 @@ public class CustomPostSerializer extends StdSerializer<Post> {
         jsonGenerator.writeStringField("explanation", post.getExplanation());
         jsonGenerator.writeStringField("category", post.getCategory());
         jsonGenerator.writeNumberField("likeCount",post.getLikeCount());
+        jsonGenerator.writeStringField("username",post.getUserInfo().getUsername());
+        jsonGenerator.writeNumberField("id",post.getId());
         LocalDateTime dateTime = post.getTime();
         String dateTimeString = dateTime.format(formatter);
         jsonGenerator.writeStringField("createdAt", dateTimeString);

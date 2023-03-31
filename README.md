@@ -49,7 +49,7 @@ Also you can run Futter Application with
 
 ***Private Keys are not available on Github. To test the repo please contact with us.***
   
- ***<a href="https://www.youtube.com/watch?v=vypOhavBrpU"> Here is the trailer video of application !</a>
+<a href="https://www.youtube.com/watch?v=vypOhavBrpU"> Here is the trailer video of application !</a>
   
   
   

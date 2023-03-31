@@ -47,7 +47,7 @@ Also you can run Futter Application with
 
 ***IMPORTANT***
 
-* Private Keys are not available on Github. To test the repo please contact with us. *
+*** Private Keys are not available on Github. To test the repo please contact with us.***
   
   
   
